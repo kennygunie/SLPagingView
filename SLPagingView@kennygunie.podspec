@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name = 'SLPagingView@kennygunie'
-	s.version = '0.0.5'
+	s.version = '0.0.6'
 	s.summary = 'fork of kennygunie'
 	s.homepage = 'https://github.com/kennygunie/SLPagingView'
 	s.license = 'MIT'
