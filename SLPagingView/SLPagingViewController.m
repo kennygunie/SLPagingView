@@ -256,7 +256,12 @@
 }
 
 -(void)addViewControllers:(UIViewController *) controller needToRefresh:(BOOL) refresh{
+    
     int tag = (int)self.viewControllers.count;
+    
+    if (self.willAddViewControllerCompletion) {
+        self.willAddViewControllerCompletion(controller, tag);
+    }
     // Try to get a navigation item
     UIView *v = nil;
     if(controller.title){

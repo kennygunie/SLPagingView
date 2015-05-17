@@ -55,6 +55,13 @@ typedef void(^SLPagingViewDidChanged)(NSInteger currentPage);
  *  @param currentPage
  */
 @property (nonatomic, copy) SLPagingViewDidChanged didChangedPage;
+/**
+ *  Delegate: Call before view controller is added in the pager
+ *  @param viewController view controller will be added
+ *  @param tag index of view controller will be added
+ */
+@property (nonatomic, copy) void(^willAddViewControllerCompletion)(id viewController, int tag);
+
 /*
  *  Contains all views displayed
  */
