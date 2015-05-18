@@ -180,6 +180,14 @@
                      object:@(animated)
                  checkIndex:YES];
     [self.navigationController.navigationBar addSubview:self.navigationBarView];
+    
+    // Try to load controller from storyboard
+    [self loadStoryboardControllers];
+    // Set up the controller
+    [self setupPagingProcess];
+    [self setCurrentIndex:self.indexSelected
+                 animated:NO];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -201,17 +209,11 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    // Try to load controller from storyboard
-    [self loadStoryboardControllers];
-    // Set up the controller
-    [self setupPagingProcess];
-    
+
     // Notify all conctrollers
     [self notifyControllers:NSSelectorFromString(@"viewDidLoad")
                      object:nil
                  checkIndex:NO];
-    [self setCurrentIndex:self.indexSelected
-                 animated:NO];
 }
 
 -(void)dealloc{
@@ -284,7 +286,7 @@
     [self.viewControllers setObject:controller.view
                              forKey:@(tag)];
     // Update controller's hierarchy
-    [self addChildViewController:controller];
+    //[self addChildViewController:controller];
     // Do we need to refresh the UI ?
     if(refresh)
        [self setupPagingProcess];
