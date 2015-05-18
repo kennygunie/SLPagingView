@@ -166,10 +166,6 @@
     [self notifyControllers:NSSelectorFromString(@"loadView")
                      object:nil
                  checkIndex:NO];
-    // Try to load controller from storyboard
-    [self loadStoryboardControllers];
-    // Set up the controller
-    [self setupPagingProcess];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -205,6 +201,11 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    // Try to load controller from storyboard
+    [self loadStoryboardControllers];
+    // Set up the controller
+    [self setupPagingProcess];
+    
     // Notify all conctrollers
     [self notifyControllers:NSSelectorFromString(@"viewDidLoad")
                      object:nil
