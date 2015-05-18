@@ -286,7 +286,7 @@
     [self.viewControllers setObject:controller.view
                              forKey:@(tag)];
     // Update controller's hierarchy
-    //[self addChildViewController:controller];
+    [self addChildViewController:controller];
     // Do we need to refresh the UI ?
     if(refresh)
        [self setupPagingProcess];
